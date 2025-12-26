@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CompanionCard from "@/components/companion/CompanionCard";
+import SEO from "@/components/seo/SEO";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Search, Filter } from "lucide-react";
@@ -63,6 +64,11 @@ const Companions = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Browse Companions | Sathi - Find Your Perfect Presence"
+        description="Browse verified professional companions in Mumbai, Delhi, Bangalore and more. Book platonic companionship for events, outings, or quiet moments."
+        keywords="hire companion India, professional companion Mumbai, Delhi companion service, Bangalore companion booking"
+      />
       <Header />
       
       <main className="pt-24 pb-20">
