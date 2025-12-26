@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SEO from "@/components/seo/SEO";
 import { Button } from "@/components/ui/button";
 import { Volume2, Shield, Hand, Heart, Users, Compass } from "lucide-react";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="About Sathi | The Art of Being Present - Professional Companionship"
+        description="Learn about Sathi's mission to provide platonic companionship in India. Zero pressure, zero judgment, zero labor - just the simple gift of human presence."
+        keywords="about Sathi, professional presence India, platonic companionship service, loneliness solution India"
+      />
       <Header />
       
       <main className="pt-24 pb-20">
