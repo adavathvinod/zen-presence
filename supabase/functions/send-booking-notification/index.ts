@@ -1,7 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -18,23 +17,31 @@ serve(async (req) => {
 
     console.log("Sending booking notification email...");
 
-    const emailResponse = await resend.emails.send({
-      from: "Sathi <onboarding@resend.dev>",
-      to: ["hyenabusiness01@gmail.com"],
-      subject: `New Booking Request - ${companionName}`,
-      html: `
-        <h1>New Booking Request</h1>
-        <p><strong>Client:</strong> ${userName}</p>
-        <p><strong>Companion:</strong> ${companionName}</p>
-        <p><strong>Date:</strong> ${bookingDate}</p>
-        <p><strong>Time:</strong> ${startTime}</p>
-        <p><strong>Venue:</strong> ${venueName}</p>
-        <p><strong>Amount:</strong> ₹${totalAmount}</p>
-        <hr>
-        <p>Please review and confirm this booking.</p>
-      `,
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "Sathi <onboarding@resend.dev>",
+        to: ["hyenabusiness01@gmail.com"],
+        subject: `New Booking Request - ${companionName}`,
+        html: `
+          <h1>New Booking Request</h1>
+          <p><strong>Client:</strong> ${userName}</p>
+          <p><strong>Companion:</strong> ${companionName}</p>
+          <p><strong>Date:</strong> ${bookingDate}</p>
+          <p><strong>Time:</strong> ${startTime}</p>
+          <p><strong>Venue:</strong> ${venueName}</p>
+          <p><strong>Amount:</strong> ₹${totalAmount}</p>
+          <hr>
+          <p>Please review and confirm this booking.</p>
+        `,
+      }),
     });
 
+    const emailResponse = await response.json();
     console.log("Email sent:", emailResponse);
 
     return new Response(JSON.stringify({ success: true }), {
