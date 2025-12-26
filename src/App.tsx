@@ -10,6 +10,7 @@ import Book from "./pages/Book";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
 import Safety from "./pages/Safety";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/safety" element={<Safety />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

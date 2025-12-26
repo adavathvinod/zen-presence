@@ -1,13 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { User, Menu, X } from "lucide-react";
+import { User, Menu, X, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { User as SupabaseUser } from "@supabase/supabase-js";
+import { useAdmin } from "@/hooks/useAdmin";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState<SupabaseUser | null>(null);
+  const { isAdmin } = useAdmin();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -69,6 +71,14 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             {user ? (
               <>
+                {isAdmin && (
+                  <Link to="/admin">
+                    <Button variant="ghost" size="sm" className="gap-2 text-primary">
+                      <Shield className="w-4 h-4" />
+                      Admin
+                    </Button>
+                  </Link>
+                )}
                 <Link to="/dashboard">
                   <Button variant="ghost" size="sm" className="gap-2">
                     <User className="w-4 h-4" />
@@ -132,6 +142,14 @@ const Header = () => {
               <div className="pt-4 border-t border-border/50 flex flex-col space-y-2">
                 {user ? (
                   <>
+                    {isAdmin && (
+                      <Link to="/admin" onClick={() => setIsMenuOpen(false)}>
+                        <Button variant="ghost" size="sm" className="w-full justify-start gap-2 text-primary">
+                          <Shield className="w-4 h-4" />
+                          Admin
+                        </Button>
+                      </Link>
+                    )}
                     <Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>
                       <Button variant="ghost" size="sm" className="w-full justify-start gap-2">
                         <User className="w-4 h-4" />
