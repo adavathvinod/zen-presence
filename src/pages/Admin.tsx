@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAdmin } from '@/hooks/useAdmin';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import SEO from '@/components/seo/SEO';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -13,7 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { toast } from 'sonner';
-import { Plus, Pencil, Trash2, Users, Calendar, Shield } from 'lucide-react';
+import { Plus, Pencil, Trash2, Users, Calendar, Shield, Phone } from 'lucide-react';
 import { Database } from '@/integrations/supabase/types';
 
 type Companion = Database['public']['Tables']['companions']['Row'];
@@ -214,6 +215,10 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO 
+        title="Admin Dashboard | Sāthī"
+        description="Manage companions and bookings on Sāthī admin panel."
+      />
       <Header />
       
       <main className="flex-1 container mx-auto px-4 py-8">
@@ -415,7 +420,7 @@ const Admin = () => {
                             </Badge>
                           </div>
                           <p className="text-sm text-muted-foreground">
-                            Client: {booking.user_email || 'Unknown'}
+                            Client: {booking.user_email || 'Unknown'} {(booking as any).phone && `• ${(booking as any).phone}`}
                           </p>
                           <p className="text-sm text-muted-foreground">
                             {booking.booking_date} at {booking.start_time} • {booking.duration_hours} hours

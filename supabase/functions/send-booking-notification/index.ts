@@ -13,7 +13,7 @@ serve(async (req) => {
   }
 
   try {
-    const { userName, companionName, bookingDate, startTime, venueName, totalAmount } = await req.json();
+    const { userName, companionName, bookingDate, startTime, venueName, totalAmount, phone } = await req.json();
 
     console.log("Sending booking notification email...");
 
@@ -24,12 +24,13 @@ serve(async (req) => {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Sathi <onboarding@resend.dev>",
+        from: "Sāthī <onboarding@resend.dev>",
         to: ["hyenabusiness01@gmail.com"],
         subject: `New Booking Request - ${companionName}`,
         html: `
           <h1>New Booking Request</h1>
           <p><strong>Client:</strong> ${userName}</p>
+          <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
           <p><strong>Companion:</strong> ${companionName}</p>
           <p><strong>Date:</strong> ${bookingDate}</p>
           <p><strong>Time:</strong> ${startTime}</p>
