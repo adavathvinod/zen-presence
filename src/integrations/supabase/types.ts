@@ -21,6 +21,7 @@ export type Database = {
           created_at: string | null
           duration_hours: number
           id: string
+          phone: string | null
           presence_nature: Database["public"]["Enums"]["presence_nature"]
           special_notes: string | null
           start_time: string
@@ -37,6 +38,7 @@ export type Database = {
           created_at?: string | null
           duration_hours?: number
           id?: string
+          phone?: string | null
           presence_nature: Database["public"]["Enums"]["presence_nature"]
           special_notes?: string | null
           start_time: string
@@ -53,6 +55,7 @@ export type Database = {
           created_at?: string | null
           duration_hours?: number
           id?: string
+          phone?: string | null
           presence_nature?: Database["public"]["Enums"]["presence_nature"]
           special_notes?: string | null
           start_time?: string

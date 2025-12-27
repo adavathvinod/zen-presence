@@ -65,9 +65,9 @@ const Companions = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Browse Companions | Sathi - Find Your Perfect Presence"
-        description="Browse verified professional companions in Mumbai, Delhi, Bangalore and more. Book platonic companionship for events, outings, or quiet moments."
-        keywords="hire companion India, professional companion Mumbai, Delhi companion service, Bangalore companion booking"
+        title="Browse Companions in Hyderabad | Sāthī - Find Your Perfect Presence"
+        description="Browse verified professional companions in Hyderabad. Book platonic companionship for events, outings, or quiet moments. Safe & respectful service."
+        keywords="hire companion Hyderabad, professional companion Hyderabad, Hyderabad companion service, platonic companionship Telangana"
       />
       <Header />
       

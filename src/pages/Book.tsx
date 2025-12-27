@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SEO from "@/components/seo/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { CheckCircle, MapPin, Star, AlertTriangle } from "lucide-react";
+import { MapPin, Star, AlertTriangle } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const presenceOptions = [
@@ -81,13 +82,14 @@ const Book = () => {
         presence_nature: presenceNature as any,
         special_notes: specialNotes,
         total_amount: totalAmount,
+        phone: phone,
       });
 
       if (error) throw error;
 
       // Send email notification
       await supabase.functions.invoke("send-booking-notification", {
-        body: { userName: user.email, companionName: companion.name, bookingDate, startTime, venueName, totalAmount },
+        body: { userName: user.email, companionName: companion.name, bookingDate, startTime, venueName, totalAmount, phone },
       });
 
       toast({ title: "Booking confirmed!", description: "Your booking has been submitted successfully." });
@@ -105,6 +107,11 @@ const Book = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title={`Book ${companion?.name || 'Companion'} | Sāthī - Professional Companionship in Hyderabad`}
+        description={`Book ${companion?.name || 'a companion'} for professional platonic companionship in Hyderabad. Safe, verified companions for events, outings, and more.`}
+        keywords="book companion Hyderabad, professional companion service, platonic companion booking"
+      />
       <Header />
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-6">
