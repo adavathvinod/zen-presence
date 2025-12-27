@@ -1,10 +1,17 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SEO from "@/components/seo/SEO";
 import { Shield, Clock, MapPin, AlertTriangle, CheckCircle, Ban, CreditCard, Phone } from "lucide-react";
 
 const Safety = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Safety & Trust Center | Sathi - Your Safety is Our Priority"
+        description="Learn about Sathi's safety protocols, guidelines, and measures to ensure every companionship session is secure, professional, and respectful."
+        keywords="Sathi safety, companion safety India, verified companion service, safe platonic companionship, trust and safety"
+        url="https://sathiapp.in/safety"
+      />
       <Header />
       
       <main className="pt-24 pb-20">

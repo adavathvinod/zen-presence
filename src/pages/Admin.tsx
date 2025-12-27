@@ -218,6 +218,7 @@ const Admin = () => {
       <SEO 
         title="Admin Dashboard | Sāthī"
         description="Manage companions and bookings on Sāthī admin panel."
+        url="https://sathiapp.in/admin"
       />
       <Header />
       

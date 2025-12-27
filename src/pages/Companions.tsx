@@ -68,6 +68,7 @@ const Companions = () => {
         title="Browse Companions in Hyderabad | Sāthī - Find Your Perfect Presence"
         description="Browse verified professional companions in Hyderabad. Book platonic companionship for events, outings, or quiet moments. Safe & respectful service."
         keywords="hire companion Hyderabad, professional companion Hyderabad, Hyderabad companion service, platonic companionship Telangana"
+        url="https://sathiapp.in/companions"
       />
       <Header />
       

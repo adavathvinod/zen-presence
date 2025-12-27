@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import SEO from "@/components/seo/SEO";
 import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { z } from "zod";
@@ -147,6 +148,12 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen bg-background flex">
+      <SEO 
+        title={isLogin ? "Login | Sathi - Professional Companionship Service" : "Sign Up | Sathi - Join Our Community"}
+        description="Access your Sathi account to book professional companions or create a new account to experience the comfort of presence."
+        keywords="Sathi login, Sathi signup, companion service account, professional companionship login"
+        url="https://sathiapp.in/auth"
+      />
       {/* Left Panel - Form */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-12">
         <div className="max-w-md mx-auto w-full">

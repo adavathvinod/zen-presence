@@ -12,6 +12,7 @@ const About = () => {
         title="About Sathi | The Art of Being Present - Professional Companionship"
         description="Learn about Sathi's mission to provide platonic companionship in India. Zero pressure, zero judgment, zero labor - just the simple gift of human presence."
         keywords="about Sathi, professional presence India, platonic companionship service, loneliness solution India"
+        url="https://sathiapp.in/about"
       />
       <Header />
       

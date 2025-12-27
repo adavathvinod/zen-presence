@@ -15,7 +15,7 @@ const SEO = ({
   description = 'Sathi offers premium platonic companionship services in India. Book verified companions for events, outings, or simply to have someone present. Safe, professional, and judgment-free.',
   keywords = 'companion service India, platonic companionship, rent a friend India, professional companion, social companion Mumbai, Delhi companion service, lonely in India, event plus one, wedding companion',
   image = '/og-image.jpg',
-  url = 'https://sathi.app',
+  url = 'https://sathiapp.in',
   type = 'website',
   schema,
 }: SEOProps) => {
@@ -28,7 +28,7 @@ const SEO = ({
     logo: `${url}/logo.png`,
     image: `${url}${image}`,
     telephone: '+91-9999999999',
-    email: 'support@sathi.app',
+    email: 'support@sathiapp.in',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IN',

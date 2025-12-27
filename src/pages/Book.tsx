@@ -111,6 +111,7 @@ const Book = () => {
         title={`Book ${companion?.name || 'Companion'} | Sāthī - Professional Companionship in Hyderabad`}
         description={`Book ${companion?.name || 'a companion'} for professional platonic companionship in Hyderabad. Safe, verified companions for events, outings, and more.`}
         keywords="book companion Hyderabad, professional companion service, platonic companion booking"
+        url="https://sathiapp.in/book"
       />
       <Header />
       <main className="pt-24 pb-20">
