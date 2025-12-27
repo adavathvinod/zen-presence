@@ -39,6 +39,7 @@ const Book = () => {
   const [venueAddress, setVenueAddress] = useState("");
   const [presenceNature, setPresenceNature] = useState("");
   const [specialNotes, setSpecialNotes] = useState("");
+  const [phone, setPhone] = useState("");
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -119,6 +120,7 @@ const Book = () => {
                 <div><Label>Duration (hours)</Label>
                   <Select value={duration} onValueChange={setDuration}><SelectTrigger><SelectValue /></SelectTrigger><SelectContent>{[1,2,3,4,5,6].map(h => <SelectItem key={h} value={String(h)}>{h} hour{h>1?"s":""}</SelectItem>)}</SelectContent></Select>
                 </div>
+                <div><Label>Your Phone Number</Label><Input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 98765 43210" required /></div>
                 <div><Label>Venue Name</Label><Input value={venueName} onChange={(e) => setVenueName(e.target.value)} placeholder="e.g., Starbucks, Central Park" required /></div>
                 <div><Label>Venue Address</Label><Input value={venueAddress} onChange={(e) => setVenueAddress(e.target.value)} placeholder="Full address" required /></div>
                 <div><Label>Nature of Presence</Label>

@@ -58,7 +58,7 @@ const SafetySOS = () => {
 
   const handleReportIssue = () => {
     window.location.href = 'tel:+919999999999';
-    toast.info('Calling Sathi Safety Helpline...');
+    toast.info('Calling Sāthī Safety Helpline...');
   };
 
   if (!hasActiveBooking || !isVisible) {
@@ -115,7 +115,7 @@ const SafetySOS = () => {
               onClick={handleReportIssue}
             >
               <Phone className="h-4 w-4 mr-2" />
-              Call Sathi Safety Helpline
+              Call Sāthī Safety Helpline
             </Button>
 
             <div className="pt-4 border-t">
