@@ -8,7 +8,7 @@ import { ArrowRight, Shield, Volume2, Hand, Users, MapPin, Clock } from "lucide-
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO />
+      <SEO url="https://sathiapp.in" />
       <Header />
       
       {/* Hero Section */}
