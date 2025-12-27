@@ -37,11 +37,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-semibold text-sm">S</span>
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg group-hover:shadow-primary/25 transition-all duration-300">
+              <span className="text-primary-foreground font-bold text-lg italic">S</span>
             </div>
-            <span className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-              Sathi
+            <span className="text-2xl font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary/70 transition-all duration-300">
+              Sāthī
             </span>
           </Link>
 

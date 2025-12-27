@@ -33,7 +33,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               <Link to="/companions">
                 <Button variant="hero" size="xl" className="gap-2">
-                  Find Your Sathi
+                  Find Your Sāthī
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>

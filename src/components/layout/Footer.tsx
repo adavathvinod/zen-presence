@@ -8,10 +8,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-semibold text-sm">S</span>
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg">
+                <span className="text-primary-foreground font-bold text-lg italic">S</span>
               </div>
-              <span className="text-xl font-semibold text-foreground">Sathi</span>
+              <span className="text-2xl font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">Sāthī</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               The luxury of quiet presence. Someone to be there, when you just don't want to be alone.
@@ -79,7 +79,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">
-              © 2024 Sathi. All rights reserved.
+              © 2024 Sāthī. All rights reserved.
             </p>
             <p className="text-muted-foreground text-sm mt-2 md:mt-0">
               Made with intention in India 🇮🇳
