@@ -18,7 +18,7 @@ Disallow: /dashboard
 Disallow: /admin
 Disallow: /book/*
 
-Sitemap: https://sathi.app/sitemap.xml
+Sitemap: https://sathiapp.in/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
